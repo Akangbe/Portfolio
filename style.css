@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Athiti:wght@200;400&display=swap');
 :root {
     --header-height: 3.5rem;
     /* ========COLORS=========== */
@@ -108,7 +109,8 @@ body {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
     color: var(--title-color);
     font-weight: var(--font-semibold);
 }
@@ -169,24 +171,6 @@ img {
     font-size: var(--small-font-size);
     color: var(--text-color-light);
 }
-.animate__down{
-    animation: movedown 1s linear 1;
-    animation-delay: 3s;
-    visibility: hidden;
-    animation-fill-mode:forwards ;
-}
-.animate__right{
-    animation: moveright 1s linear 1;
-    animation-delay: 4s;
-    visibility: hidden;
-    animation-fill-mode:forwards ;
-}
-.animate__zoomIn{
-    animation: zoomin 1s linear 1;
-    animation-delay: 4s;
-    visibility: hidden;
-    animation-fill-mode:forwards ;
-}
 
 /* =======  HEADEER & NAV  ======= */
 
@@ -211,11 +195,11 @@ img {
 .nav__logo {
     color: var(--first-color);
     font-weight: var(--font-medium);
-    transition: .4s;
+    /* transition: .4s;
     animation: movedown 1s linear 1;
     animation-delay: 1s;
     visibility: hidden;
-    animation-fill-mode:forwards ;
+    animation-fill-mode:forwards ; */
 
 }
 /* Animation========== */
@@ -593,6 +577,8 @@ box-shadow:  -16px 16px 33px #bebebe,
     /* background-color: hsla(var(--second-hue), 32%, 16%, .8); */
     padding: 1rem;
     border-radius: 1rem;
+    position: relative;
+
 }
 .work__card:hover{
     /* background-color: yellow; */
@@ -606,7 +592,41 @@ box-shadow:  -16px 16px 33px #bebebe,
     font-weight: var(--font-medium);
     margin-bottom: .25rem;
 }
+.project__objective{
+    max-width: 290px;
+    /* font-weight: 200; */
+    font-family: 'Athiti', sans-serif;
+    margin-bottom: .5rem;
 
+}
+/* ==========================================TESTING====================== */
+ /* The text that will overlay the image */
+.project__objective{
+    position: absolute;
+      bottom: 33px;
+      left: 23px;
+      right: 0;
+      background-color: black;
+      color: white;
+      padding: 10px;
+      visibility: hidden;
+      border-radius: .5rem;
+      text-align: center;
+      z-index: 1000;
+}
+
+    /* The button to toggle the text */
+.more-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 5px;
+    margin: .5rem .8rem ;
+    border-radius: 5px;
+    background-color: var(--colorme);
+    left: 0;
+    width: max-content;
+  }
 .work__button {
     width: max-content;
     font-size: var(--small-font-size);
@@ -618,6 +638,8 @@ box-shadow:  -16px 16px 33px #bebebe,
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: 19px;
+    margin-bottom:30px ;
 }
 .work__button:hover .work__icon {
     transform: translateX(.25rem);
@@ -847,6 +869,8 @@ body.light-theme {
 .light-theme .footer__social-link{
     background-color: var(--title-color);
 }
+
+
 /* .light-theme .home__social-link, */
 .light-theme .home__scroll,
 .light-theme .button,

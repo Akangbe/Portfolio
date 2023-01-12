@@ -59,3 +59,64 @@ themeButton.addEventListener("click", () => {
   localStorage.setItem("selected-theme", getCurrentTheme());
   localStorage.setItem("selected-icon", getCurrentIcon());
 });
+
+// scroll animation
+const scrollAnime = ScrollReveal({
+  origin: "top",
+  distance: "60px",
+  duration: 3000,
+  delay: 600,
+});
+scrollAnime.reveal(`.home__data`);
+scrollAnime.reveal(`.about`, { delay: 700, origin: "right" });
+scrollAnime.reveal(`#work`, { delay: 700, origin: "left" });
+scrollAnime.reveal(`.home__handl`, { delay: 700 });
+scrollAnime.reveal(`.home__social , .home__scroll`, {
+  delay: 900,
+  origin: "bottom",
+});
+// Active button
+// const linkwork = document.querySelectorAll(".work__item");
+// function activework() {
+//   linkwork.forEach((L) => l.remove("active-work"));
+//   this.classList.add("active-work");
+// }
+// linkwork.forEach((L) => l.addEventListener("click", activework));
+
+// MIXITUP
+let mixermyportfolio = mixitup(".work__container", {
+  selectors: {
+    target: ".work__card",
+  },
+  animation: {
+    duration: 300,
+  },
+});
+// Get all buttons
+const buttons = document.querySelectorAll(".work__item");
+
+// Add event listener to each button
+buttons.forEach((button) => {
+  button.addEventListener("click", (event) => {
+    // Remove active class from all buttons
+    buttons.forEach((btn) => btn.classList.remove("active-work"));
+    // Add active class to clicked button
+    event.target.classList.add("active-work");
+  });
+});
+
+const moreBtns = document.querySelectorAll(".more-btn");
+const overlayTexts = document.querySelectorAll(".project__objective");
+
+moreBtns.forEach(function (moreBtn) {
+  moreBtn.addEventListener("click", function () {
+    var overlayText = this.nextElementSibling;
+    if (overlayText.style.visibility === "hidden") {
+      overlayText.style.visibility = "visible";
+      moreBtn.innerHTML = "less";
+    } else {
+      overlayText.style.visibility = "hidden";
+      moreBtn.innerHTML = "more";
+    }
+  });
+});
