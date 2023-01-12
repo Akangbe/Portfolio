@@ -75,13 +75,21 @@ scrollAnime.reveal(`.home__social , .home__scroll`, {
   delay: 900,
   origin: "bottom",
 });
-// Active button
-// const linkwork = document.querySelectorAll(".work__item");
-// function activework() {
-//   linkwork.forEach((L) => l.remove("active-work"));
-//   this.classList.add("active-work");
-// }
-// linkwork.forEach((L) => l.addEventListener("click", activework));
+const moreBtns = document.querySelectorAll(".more-btn");
+const overlayTexts = document.querySelectorAll(".project__objective");
+// =============moreBtn=============//
+moreBtns.forEach(function (moreBtn) {
+  moreBtn.addEventListener("click", function () {
+    var overlayText = this.nextElementSibling;
+    if (overlayText.style.visibility === "hidden") {
+      overlayText.style.visibility = "visible";
+      moreBtn.innerHTML = "less";
+    } else {
+      overlayText.style.visibility = "hidden";
+      moreBtn.innerHTML = "more";
+    }
+  });
+});
 
 // MIXITUP
 let mixermyportfolio = mixitup(".work__container", {
@@ -102,21 +110,5 @@ buttons.forEach((button) => {
     buttons.forEach((btn) => btn.classList.remove("active-work"));
     // Add active class to clicked button
     event.target.classList.add("active-work");
-  });
-});
-
-const moreBtns = document.querySelectorAll(".more-btn");
-const overlayTexts = document.querySelectorAll(".project__objective");
-
-moreBtns.forEach(function (moreBtn) {
-  moreBtn.addEventListener("click", function () {
-    var overlayText = this.nextElementSibling;
-    if (overlayText.style.visibility === "hidden") {
-      overlayText.style.visibility = "visible";
-      moreBtn.innerHTML = "less";
-    } else {
-      overlayText.style.visibility = "hidden";
-      moreBtn.innerHTML = "more";
-    }
   });
 });
