@@ -450,8 +450,13 @@ box-shadow:  -16px 16px 33px #bebebe,
     border-radius: 1.5rem;
     justify-self: center;
     margin-bottom: .75rem;
+    filter: grayscale(100%);
 }
-
+.about__img:hover{
+    filter: grayscale(0);
+    transform: scale(1.1);
+    transition: all 0.4s ease-in-out;
+}
 .about__data {
     text-align: center;
 }
