@@ -92,6 +92,7 @@ moreBtns.forEach(function (moreBtn) {
 });
 
 // MIXITUP
+
 let mixermyportfolio = mixitup(".work__container", {
   selectors: {
     target: ".work__card",
