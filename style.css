@@ -505,6 +505,7 @@ img {
     background-color: var(--container-color);
     padding: 1.5rem;
     border-radius: 1.25rem;
+    width: 60vw;
 
 }
 
@@ -527,11 +528,13 @@ img {
     display: grid;
     align-content: flex-start;
     row-gap: 1rem;
+    /* width: 30%; */
 }
 
 .skills__data {
     display: flex;
     column-gap: .5rem;
+
 }
 
 .skills .bxs-badge-check {
@@ -543,6 +546,7 @@ img {
     font-size: var(--normal-font-size);
     font-weight: var(--font-medium);
     line-height: 18px;
+    
 }
 
 .skills__level {
