@@ -505,7 +505,7 @@ img {
     background-color: var(--container-color);
     padding: 1.5rem;
     border-radius: 1.25rem;
-    width: 60vw;
+    /* width: 100vw; */
 
 }
 
@@ -975,6 +975,7 @@ body.light-theme {
 
     .skills__content {
         padding: 2rem 4rem;
+        width: auto;
     }
 
     .contact__info {
